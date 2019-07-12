@@ -1,1 +1,19 @@
-<h1>WELCOME</h1>
+{% extends 'generic/base.html' %}
+
+{% block title %}
+<h1>Hello! I'm Evy</h1>
+{% endblock title %}
+
+{% block content %}
+<section id="section-projects">
+    {% for job in jobs.all %}
+    <figure class="content-inline card-project">
+        <img src="{{ job.image.url }}" alt="image of the first project" height="100" width="100">
+        <figcaption class="text-center">
+            <h4>{{ job.title }}</h4>
+            <p>{{ job.summary }}</p>
+        </figcaption>
+    </figure>
+    {% endfor %}
+</section>
+{% endblock content%}
