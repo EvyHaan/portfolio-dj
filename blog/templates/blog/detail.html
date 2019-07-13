@@ -1,0 +1,9 @@
+{% block title %}
+<h1>{{ blog.title}}</h1>
+{% endblock title %}
+
+<h4>{{ blog.pub_date_short }}</h4>
+
+<img src="{{ blog.image.url }}" alt="texttexttext" height="500">
+
+<p>{{ blog.body }}</p>

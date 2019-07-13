@@ -1,3 +1,12 @@
+{% load staticfiles %}
+
+<div id="nav">
+    <a href="{% url 'home' %}">Evy Haan</a>
+    <a href="https://www.linkedin.com/in/evyhaan/">LinkedIn</a>
+    <a href="{% static 'EvyHaanResume.pdf' %}">Resume</a>
+    <a href="{% url 'all_blogs' %}">Blog</a>
+</div>
+
 {% block title %}
 <h1>insert title here</h1>
 {% endblock title %}

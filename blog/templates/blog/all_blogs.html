@@ -5,13 +5,17 @@
 {% endblock title %}
 
 {% block content %}
+
 <section id="section-blogs">
-    {% for blog in blogs.all %}
+    <h2>Latests Posts</h2>
+    {% for blog in blogs.all reversed %}
     <figure class="content-inline card-blog">
-        <img src="{{ blog.image.url }}" alt="texttexttext" height="100" width="150">
-        <figcaption class="text-center">
-            <h4>{{ blog.title }}</h4>
-        </figcaption>
+        <h3><a href="{% url 'detail' blog.id %}">{{ blog.title }}</a></h3>
+        <h4>{{ blog.pub_date_short }}</h4>
+        <img src="{{ blog.image.url }}" alt="texttexttext" height="150" width="250">
+            <figcaption class="text-center">
+                <p>{{ blog.summary }}</p>
+            </figcaption>
     </figure>
     {% endfor %}
 </section>
